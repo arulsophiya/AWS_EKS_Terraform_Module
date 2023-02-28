@@ -1,0 +1,38 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: shift-deployment-role
+  namespace: shift
+rules:
+  - apiGroups:
+      - ""
+      - extensions
+      - apps
+    resources:
+      - deployments
+      - replicasets
+      - pods
+    verbs:
+      - create
+      - get
+      - list
+      - edit
+      - patch
+      - watch
+      - rollout  
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: shift-deployment-rolebinding
+  namespace: shift
+roleRef:
+  apiGroup: ""
+  kind: Role
+  name: shift-deployment-role
+subjects:
+  - kind: User
+    name: dev
+    apiGroup: ""
+
