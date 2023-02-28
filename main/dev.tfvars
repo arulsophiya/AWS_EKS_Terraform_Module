@@ -1,0 +1,10 @@
+region                            = "ap-south-1"
+cluster_name                      = "EKS-DEV"
+vpc_name                          = "EKS-VPC"
+cidr_block                        = "192.168.0.0/16"
+private_subnets                   = ["192.168.10.0/24", "192.168.11.0/24", "192.168.12.0/24"]
+public_subnets                    = ["192.168.0.0/24", "192.168.1.0/24", "192.168.2.0/24"]
+worker_node_instance_type         = ["t2.micro"]
+worker_nodes_scaling_desired_size = "3"
+worker_nodes_scaling_max_size     = "4"
+worker_nodes_scaling_min_size     = "1"

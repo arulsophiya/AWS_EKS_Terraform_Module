@@ -1,0 +1,10 @@
+region                            = "us-west-2"
+cluster_name                      = "EKS-DEV"
+vpc_name                          = "EKS-VPC"
+cidr_block                        = "10.0.0.0/16"
+private_subnets                   = ["10.0.10.0/24", "10.0.11.0/24", "10.0.12.0/24"]
+public_subnets                    = ["10.0.0.0/24", "10.0.1.0/24", "10.0.2.0/24"]
+worker_node_instance_type         = ["r3.large"]
+worker_nodes_scaling_desired_size = "2"
+worker_nodes_scaling_max_size     = "5"
+worker_nodes_scaling_min_size     = "1"
